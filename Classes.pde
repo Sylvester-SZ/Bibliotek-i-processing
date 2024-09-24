@@ -1,10 +1,10 @@
-Class Bog{
+class Bog{
   private String titel;
   private String forfatter;
-  private Boolean udlaant;
+  private boolean udlaant;
   
   
-  Bog(String temptitel, String tempforfatter, tempudlaant){
+  Bog(String temptitel, String tempforfatter, boolean tempudlaant){
     titel=temptitel;
     forfatter=tempforfatter;
     udlaant=tempudlaant;
@@ -27,6 +27,6 @@ Class Bog{
   }
   
   void afleverBog(){
-    if(udlaant==true)
+  
   }
 }
