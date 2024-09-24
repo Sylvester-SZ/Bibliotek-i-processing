@@ -1,8 +1,8 @@
-class bruger {
+class Bruger {
   private String navn;
   private String brugerID;
 
-  bruger(String tempnavn, String tempbrugerID) {
+  Bruger(String tempnavn, String tempbrugerID) {
     navn=tempnavn;
     brugerID=tempbrugerID;
   }
