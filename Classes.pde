@@ -4,6 +4,7 @@ class Bog {
   boolean udlaant;
   
   Bog(String temptitel, String tempforfatter, boolean tempudlaant) {
+
     titel=temptitel;
     forfatter=tempforfatter;
     udlaant=tempudlaant;
@@ -21,7 +22,9 @@ class Bog {
     udlaant=true;
   }
 
+
   void afleverBog() {
     udlaant=false;
+
   }
 }
