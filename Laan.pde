@@ -1,10 +1,10 @@
-Class Laan{
+class Laan{
  private Bog bog;
  private Bruger bruger;
  private String laanDato;
  private boolean AktivtLaan;
  
- Laan(Bog tampbog, Bruger tempbruger, String templaanDato, boolean tempAktivtLaan){
+ Laan(Bog tempbog, Bruger tempbruger, String templaanDato, boolean tempAktivtLaan){
   bog=tempbog;
   bruger=tempbruger;
   laanDato=templaanDato;
