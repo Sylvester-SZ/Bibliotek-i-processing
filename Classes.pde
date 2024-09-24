@@ -1,32 +1,27 @@
-Class Bog{
-  private String titel;
-  private String forfatter;
-  private Boolean udlaant;
+class Bog {
+  String titel;
+  String forfatter;
+  boolean udlaant;
   
-  
-  Bog(String temptitel, String tempforfatter, tempudlaant){
+  Bog(String temptitel, String tempforfatter, boolean tempudlaant) {
     titel=temptitel;
     forfatter=tempforfatter;
     udlaant=tempudlaant;
-     
   }
-  
-  String getTitel(){
+
+  String getTitel() {
     return titel;
-    
   }
   
-  
-  String getForfatter(){
+  String getForfatter() {
     return forfatter;
-    
   }
-  
-  void laanBog(){
-    
+
+  void laanBog() {
+    udlaant=true;
   }
-  
-  void afleverBog(){
-    if(udlaant==true)
+
+  void afleverBog() {
+    udlaant=false;
   }
 }
