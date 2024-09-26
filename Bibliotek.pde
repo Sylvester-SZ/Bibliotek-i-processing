@@ -6,7 +6,13 @@ class Bibliotek {
   void laanBog(Bruger brugere, Bog Bøger){
     
   }
-  void afleverBog(Bog bogen){
-    bogen.udlaant = false;
+  void afleverBog(Bog bog){
+    bog.udlaant = false;
+  }
+  void tilfojBog(Bog bogen){
+    bøger.add(bogen);
+  }
+  void registrerBruger(Bruger bruger){
+    brugere.add(bruger);
   }
 }
