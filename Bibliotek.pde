@@ -15,4 +15,15 @@ class Bibliotek {
   void registrerBruger(Bruger bruger){
     brugere.add(bruger);
   }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  void
 }
