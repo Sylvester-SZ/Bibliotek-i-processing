@@ -1,4 +1,4 @@
-Bibliotek Hjoerring = new Bibliotek();
+Bibliotek Hjoerring = new Bibliotek("Hjørring Bibliotek");
 
 Bog bog1 = new Bog("Mazerunner", "James_Dashner", false);
 Bog bog2 = new Bog("Pippi_Langstrømpe", "Astrid_Lindgren", false);
@@ -17,5 +17,5 @@ void setup(){
 }
 
 void draw(){
-
+  
 }

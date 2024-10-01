@@ -2,9 +2,18 @@ String navn;
 
 class Bibliotek {
   ArrayList<Bog> bøger = new ArrayList<Bog>();
-  public ArrayList<Bruger> brugere = new ArrayList<Bruger>();
-  public ArrayList<Laan> udlaan = new ArrayList<Laan>();
-
+  ArrayList<Bruger> brugere = new ArrayList<Bruger>();
+  ArrayList<Laan> udlaan = new ArrayList<Laan>();
+  private String bibnavn; 
+  
+  Bibliotek(String navn){
+    this.bibnavn = navn;
+  }
+  
+  String getBibNavn(){
+    return bibnavn;
+  }
+  
   void laanBog(Bruger brugere, Bog Bøger) {
   }
   void afleverBog(Bog bog) {
@@ -48,5 +57,4 @@ class Bibliotek {
       return true;
     }
   }
-  
 }
