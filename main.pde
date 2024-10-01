@@ -7,8 +7,8 @@ Bruger bruger2 = new Bruger("Sylvester", "666");
 
 
 void setup(){
-  size(1,1);
-
+  fullScreen();
+  tegnBog(width/29,height/20);
   Hjoerring.tilfojBog(bog1);
   Hjoerring.tilfojBog(bog2);
   Hjoerring.registrerBruger(bruger1);

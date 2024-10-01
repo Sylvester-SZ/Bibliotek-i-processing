@@ -25,6 +25,5 @@ class Bog {
 
   void afleverBog() {
     udlaant=false;
-
   }
 }
