@@ -1,7 +1,7 @@
 Bibliotek Hjoerring = new Bibliotek("Hjørring Bibliotek");
 
-Bog bog1 = new Bog("Mazerunner", "James_Dashner", false);
-Bog bog2 = new Bog("Pippi_Langstrømpe", "Astrid_Lindgren", false);
+Bog bog1 = new Bog("Mazerunner", "James_Dashner", "SciFi");
+Bog bog2 = new Bog("Pippi_Langstrømpe", "Astrid_Lindgren", "Fiction");
 Bruger bruger1 = new Bruger("Philip", "007");
 Bruger bruger2 = new Bruger("Sylvester", "666"); 
 
@@ -13,7 +13,7 @@ void setup(){
   Hjoerring.tilfojBog(bog2);
   Hjoerring.registrerBruger(bruger1);
   Hjoerring.registrerBruger(bruger2);
-  print(Hjoerring.searchBog("Mazer  nner").getTitel());
+  print(Hjoerring.searchBog("Nonfiction").getTitel());
 }
 
 void draw(){

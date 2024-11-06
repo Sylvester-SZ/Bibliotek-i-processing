@@ -1,17 +1,14 @@
+
 class Bruger {
-  private String navn;
-  private String brugerID;
-
-  Bruger(String tempnavn, String tempbrugerID) {
+  private String navn, brugerId;
+  Bruger(String tempnavn, String tempbrugerId) {
     navn=tempnavn;
-    brugerID=tempbrugerID;
+    brugerId=tempbrugerId;
   }
-
   String getNavn() {
     return navn;
   }
-
-  String getBrugerID() {
-    return brugerID;
+  String getBrugerId() {
+    return brugerId;
   }
 }

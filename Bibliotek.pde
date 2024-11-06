@@ -14,16 +14,42 @@ class Bibliotek {
     return bibnavn;
   }
   
-  void laanBog(Bruger brugere, Bog Bøger) {
+  void laanBog(Bruger person, Bog book) {
+    Laan laan = new Laan(book, person);
+    udlaan.add(laan);
+    println(person.getNavn()+" har lånt: "+book.getTitel());
+
   }
-  void afleverBog(Bog bog) {
-    bog.udlaant = false;
+  
+void afleverBog(Bog book) {
+    Laan aktivtLaan=null;
+    for (Laan laan : udlaan) {
+      if (laan.getBog().equals(book)&&laan.erAktivtLaan()) {
+        aktivtLaan=laan;
+        break;
+      }
+    }
+    if (aktivtLaan!=null) {
+      aktivtLaan.afleverBog();
+      udlaan.remove(aktivtLaan);
+      println(aktivtLaan.getBruger().getNavn()+" har afleveret: " + aktivtLaan.getBog().getTitel());
+
+    } else {
+      println("Ingen aktive lån fundet for bogen, " + book.getTitel()+ ", " + book.getForfatter());
+
+    }
   }
-  void tilfojBog(Bog bogen) {
-    bøger.add(bogen);
+  
+  void tilfojBog(Bog book) {
+    bøger.add(book);
+    println("tilføjet: "+book.getTitel()+", "+book.getForfatter());
+
   }
-  void registrerBruger(Bruger bruger) {
-    brugere.add(bruger);
+  
+  void registrerBruger(Bruger person) {
+    brugere.add(person);
+    println("tilføjet: "+person.getNavn()+", "+person.getBrugerId());
+
   }
   
   //Returnerer alle bøger
@@ -31,7 +57,7 @@ class Bibliotek {
     return bøger;
   }
   
-  //Søger efter bognavn og retunerer Bog objekt
+  //Søger efter bognavn/forfatter/katagori og retunerer Bog objekt
   Bog searchBog(String navn) {
     // Fjern tegnsætning og gør teksten til små bogstaver
     navn = navn.toLowerCase();
@@ -40,12 +66,24 @@ class Bibliotek {
       String bogtitle = bogern.getTitel();
       bogtitle = bogtitle.toLowerCase();
       bogtitle = bogtitle.replaceAll("[^a-zA-Z0-9\\s]", "");
+      String bogauthor = bogern.getForfatter();
+      bogauthor = bogauthor.toLowerCase();
+      bogauthor = bogauthor.replaceAll("[^a-zA-Z0-9\\s]", "");
+      String bogcata = bogern.getKatagori();
+      bogcata = bogcata.toLowerCase();
+      bogcata = bogcata.replaceAll("[^a-zA-Z0-9\\s]", "");
       if (navn.equals(bogtitle)) {
+        return bogern;
+      }
+      else if(navn.equals(bogauthor)) {
+        return bogern;
+      }
+      else if(navn.equals(bogcata)) {
         return bogern;
       }
     }
     println("Denne bog findes ikke");
-    return new Bog("Ikke Tilgængelig", "", false);
+    return new Bog("Ikke Tilgængelig", "","");
   }
   
   //Overflødig
